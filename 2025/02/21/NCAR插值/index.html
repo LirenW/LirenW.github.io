@@ -56,8 +56,7 @@ gtag('config', 'xx-xxxxxxx-xx');</script><link rel="stylesheet" href="/css/tocbo
 </ol>
 <p>插值结果如下图（时间为2001-01-01），在0°附近有一条值为0的明显不合理的直线，并且延伸到了整个极地地区。</p>
 <p><img src="https://i.111666.best/image/xyiJR3yQ7S9Qpi7mX5YnZ3.png" alt="image"></p>
-<p>由于这里是对<code>diffuse_skylight_ration</code>插值，假如对四个变量插值，结果是这样的：<br><img src="https://i.111666.best/image/0JzfrdlOBwv2WN18M7AgFq.png" alt="image"></p>
-<p>这个结果同样存在问题。并且由于数据量的问题（插值后的结果为32G），对辐射通量插值并不现实。</p>
+<p>由于这里是对<code>diffuse_skylight_ration</code>插值，假如对四个变量插值，由于数据量的问题（插值后的结果为32GB），对辐射通量插值并不现实。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>这一问题似乎是源自数据中的缺失值，其中不仅包含<code>NaN</code>，似乎还包含<code>Inf</code>。这样我们可以先对数据进行处理，之后再进行插值，我的操作如下：</p>
 <ol>
 <li>首先在计算时将结果限制在0-1</li>
