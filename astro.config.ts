@@ -1,3 +1,10 @@
+/*
+ * @Date: 2025-04-30 12:02:25
+ * @LastEditors: Liren
+ * @LastEditTime: 2025-04-30 14:00:30
+ * @Description: Do not edit
+ * @FilePath: /astro-theme-retypeset/astro.config.ts
+ */
 import mdx from '@astrojs/mdx'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
@@ -32,7 +39,7 @@ const imageConfig = imageHostURL
   : {}
 
 export default defineConfig({
-  site: url,
+  site: 'https://lirenw.github.io/',
   base: '/',
   trailingSlash: 'always',
   prefetch: {
